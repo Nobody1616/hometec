@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Mail, Phone } from "lucide-react";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,16 +10,22 @@ const teamMembers = [
     name: "Max Mustermann",
     role: "Geschäftsführung",
     description: "Verantwortlich für die strategische Ausrichtung und Kundenbetreuung des Unternehmens.",
+    email: "max@home-tec.de",
+    phone: "+49 123 456789",
   },
   {
     name: "Thomas Müller",
     role: "Projektleitung",
     description: "Koordiniert die Bauvorhaben vor Ort und sorgt für termingerechte Umsetzung.",
+    email: "thomas@home-tec.de",
+    phone: "+49 123 456790",
   },
   {
     name: "Anna Schmidt",
     role: "Verwaltung & Organisation",
     description: "Kümmert sich um Planung, Angebotserstellung und die interne Organisation.",
+    email: "anna@home-tec.de",
+    phone: "+49 123 456791",
   },
 ];
 
