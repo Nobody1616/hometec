@@ -20,20 +20,73 @@ const advantages = [
   { icon: Wrench, title: "Erfahrung", desc: "Kompetenz aus zahlreichen Projekten" },
 ];
 
+const heroSlides = [
+  { id: 1, label: "Hintergrundbild 1" },
+  { id: 2, label: "Hintergrundbild 2" },
+  { id: 3, label: "Hintergrundbild 3" },
+];
+
 const Index = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
 
       {/* Hero */}
-      <section className="section-padding bg-secondary">
-        <div className="container-narrow">
-          <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
-            <div className="animate-fade-in-up">
-              <h1 className="font-heading text-3xl font-extrabold leading-tight text-foreground md:text-4xl lg:text-5xl">
+      <section className="relative min-h-[600px] overflow-hidden lg:min-h-[700px]">
+        {/* Background slides */}
+        {heroSlides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className="absolute inset-0 transition-opacity duration-1000"
+            style={{ opacity: index === currentSlide ? 1 : 0 }}
+          >
+            <div
+              className="absolute inset-0 image-placeholder border-0 rounded-none"
+              style={{
+                animation: index === currentSlide ? "heroZoom 8s ease-out forwards" : "none",
+              }}
+            >
+              <div className="relative z-10 flex flex-col items-center gap-2 text-muted-foreground/30">
+                <span className="text-xs font-medium">{slide.label}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-foreground/60 z-[1]" />
+
+        {/* Slide indicators */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-[2] flex gap-2">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === currentSlide ? "w-8 bg-primary" : "w-2 bg-primary-foreground/50"
+              }`}
+              aria-label={`Slide ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Content */}
+        <div className="relative z-[2] flex min-h-[600px] items-center lg:min-h-[700px]">
+          <div className="container-narrow w-full px-4 md:px-8 lg:px-16">
+            <div className="max-w-2xl animate-fade-in-up">
+              <h1 className="font-heading text-3xl font-extrabold leading-tight text-primary-foreground md:text-4xl lg:text-5xl">
                 Home-tec GbR – Ihr Partner für Wohnungsbau und Renovierung in Elsdorf
               </h1>
-              <p className="mt-4 text-lg text-muted-foreground md:text-xl">
+              <p className="mt-4 text-lg text-primary-foreground/80 md:text-xl">
                 Zuverlässige Beratung, saubere Umsetzung und professionelle Lösungen für Bau- und Renovierungsprojekte.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -44,14 +97,13 @@ const Index = () => {
                   </Button>
                 </Link>
                 <a href="tel:017643338686">
-                  <Button variant="heroOutline" size="lg">
+                  <Button variant="heroOutline" size="lg" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
                     <Phone className="h-5 w-5" />
                     Jetzt anrufen
                   </Button>
                 </a>
               </div>
             </div>
-            <ImagePlaceholder aspectRatio="aspect-[4/3]" label="Bild einfügen" className="min-h-[280px] lg:min-h-[380px]" />
           </div>
         </div>
       </section>
