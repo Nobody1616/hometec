@@ -89,3 +89,12 @@
     opacity: 0.5;
   }
 }
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
