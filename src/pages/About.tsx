@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, Mail, Phone } from "lucide-react";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -10,16 +10,22 @@ const teamMembers = [
     name: "Max Mustermann",
     role: "Geschäftsführung",
     description: "Verantwortlich für die strategische Ausrichtung und Kundenbetreuung des Unternehmens.",
+    email: "max@home-tec.de",
+    phone: "+49 123 456789",
   },
   {
     name: "Thomas Müller",
     role: "Projektleitung",
     description: "Koordiniert die Bauvorhaben vor Ort und sorgt für termingerechte Umsetzung.",
+    email: "thomas@home-tec.de",
+    phone: "+49 123 456790",
   },
   {
     name: "Anna Schmidt",
     role: "Verwaltung & Organisation",
     description: "Kümmert sich um Planung, Angebotserstellung und die interne Organisation.",
+    email: "anna@home-tec.de",
+    phone: "+49 123 456791",
   },
 ];
 
@@ -88,11 +94,21 @@ const AboutPage = () => {
                 key={member.name}
                 className="flex flex-col items-center rounded-xl border border-border bg-card p-6 text-center shadow-sm"
               >
-                <ImagePlaceholder
-                  aspectRatio="aspect-square"
-                  label="Profilfoto"
-                  className="mb-4 h-28 w-28 !rounded-full"
-                />
+                <div className="group relative mb-4 h-36 w-36 overflow-hidden rounded-full">
+                  <ImagePlaceholder
+                    aspectRatio="aspect-square"
+                    label="Profilfoto"
+                    className="h-full w-full !rounded-full"
+                  />
+                  <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-full bg-foreground/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <a href={`mailto:${member.email}`} className="pointer-events-auto flex items-center gap-1.5 text-xs font-medium text-white hover:underline">
+                      <Mail className="h-3.5 w-3.5" /> {member.email}
+                    </a>
+                    <a href={`tel:${member.phone}`} className="pointer-events-auto flex items-center gap-1.5 text-xs font-medium text-white hover:underline">
+                      <Phone className="h-3.5 w-3.5" /> {member.phone}
+                    </a>
+                  </div>
+                </div>
                 <h3 className="font-heading text-lg font-bold text-foreground">{member.name}</h3>
                 <span className="mt-1 text-sm font-medium text-primary">{member.role}</span>
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{member.description}</p>
