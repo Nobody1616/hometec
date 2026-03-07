@@ -5,6 +5,9 @@ import { Phone, Shield, Clock, Users, Wrench, ArrowRight } from "lucide-react";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import hero1 from "@/assets/hero-1.png";
+import hero2 from "@/assets/hero-2.png";
+import hero3 from "@/assets/hero-3.png";
 
 const services = [
   { title: "Wohnungsbau", desc: "Professioneller Wohnungsbau in Elsdorf – von der Planung bis zur schlüsselfertigen Übergabe.", link: "/leistungen" },
@@ -21,9 +24,9 @@ const advantages = [
 ];
 
 const heroSlides = [
-  { id: 1, label: "Hintergrundbild 1" },
-  { id: 2, label: "Hintergrundbild 2" },
-  { id: 3, label: "Hintergrundbild 3" },
+  { id: 1, label: "Hintergrundbild 1", src: hero1 },
+  { id: 2, label: "Hintergrundbild 2", src: hero2 },
+  { id: 3, label: "Hintergrundbild 3", src: hero3 },
 ];
 
 const Index = () => {
@@ -49,16 +52,14 @@ const Index = () => {
             className="absolute inset-0 transition-opacity duration-1000"
             style={{ opacity: index === currentSlide ? 1 : 0 }}
           >
-            <div
-              className="absolute inset-0 image-placeholder border-0 rounded-none"
+            <img
+              src={slide.src}
+              alt={slide.label}
+              className="absolute inset-0 h-full w-full object-cover"
               style={{
                 animation: index === currentSlide ? "heroZoom 8s ease-out forwards" : "none",
               }}
-            >
-              <div className="relative z-10 flex flex-col items-center gap-2 text-muted-foreground/30">
-                <span className="text-xs font-medium">{slide.label}</span>
-              </div>
-            </div>
+            />
           </div>
         ))}
 
