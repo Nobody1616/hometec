@@ -110,7 +110,7 @@ const Index = () => {
       </section>
 
       {/* Intro */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ backgroundColor: '#ffffff' }}>
         <div className="container-narrow text-center">
           <h2 className="font-heading text-2xl font-bold text-foreground md:text-3xl">
             Kompetenz und Zuverlässigkeit aus Elsdorf
@@ -122,7 +122,7 @@ const Index = () => {
       </section>
 
       {/* Advantages */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding" style={{ backgroundColor: '#f5f5f5' }}>
         <div className="container-narrow">
           <h2 className="text-center font-heading text-2xl font-bold text-foreground md:text-3xl">
             Warum Home-tec?
@@ -142,7 +142,7 @@ const Index = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ backgroundColor: '#faf7f3' }}>
         <div className="container-narrow">
           <h2 className="text-center font-heading text-2xl font-bold text-foreground md:text-3xl">
             Unsere Leistungen
@@ -165,7 +165,7 @@ const Index = () => {
       </section>
 
       {/* References Preview */}
-      <section className="section-padding bg-secondary">
+      <section className="section-padding" style={{ backgroundColor: '#f5f5f5' }}>
         <div className="container-narrow">
           <h2 className="text-center font-heading text-2xl font-bold text-foreground md:text-3xl">
             Unsere Projekte
@@ -195,7 +195,7 @@ const Index = () => {
       </section>
 
       {/* Contact Teaser */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ backgroundColor: '#faf7f3' }}>
         <div className="container-narrow text-center">
           <h2 className="font-heading text-2xl font-bold text-foreground md:text-3xl">
             Bereit für Ihr Projekt?
