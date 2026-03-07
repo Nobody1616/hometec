@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Shield, Clock, Users, Wrench, ArrowRight } from "lucide-react";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
