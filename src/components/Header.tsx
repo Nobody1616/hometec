@@ -18,9 +18,9 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-sm">
-      <div className="container-narrow flex h-20 items-center justify-between px-4 md:h-24 md:px-8">
-        <Link to="/" className="-mb-4 flex items-center">
-          <img src={logo} alt="Home Tec Logo" className="h-16 w-auto md:h-20" />
+      <div className="container-narrow flex h-24 items-center justify-between px-4 md:h-28 md:px-8">
+        <Link to="/" className="-mb-6 flex items-center">
+          <img src={logo} alt="Home Tec Logo" className="h-20 w-auto md:h-28" />
         </Link>
 
         {/* Desktop nav */}
