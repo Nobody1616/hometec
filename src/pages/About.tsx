@@ -94,13 +94,13 @@ const AboutPage = () => {
                 key={member.name}
                 className="flex flex-col items-center rounded-xl border border-border bg-card p-6 text-center shadow-sm"
               >
-                <div className="group relative mb-4 h-36 w-36 overflow-hidden rounded-full">
+                <div className="group relative mb-4 h-48 w-full overflow-hidden rounded-xl">
                   <ImagePlaceholder
-                    aspectRatio="aspect-square"
+                    aspectRatio="aspect-[4/3]"
                     label="Profilfoto"
-                    className="h-full w-full !rounded-full"
+                    className="h-full w-full !rounded-xl"
                   />
-                  <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-full bg-foreground/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-2 rounded-xl bg-foreground/70 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <a href={`mailto:${member.email}`} className="pointer-events-auto flex items-center gap-1.5 text-xs font-medium text-white hover:underline">
                       <Mail className="h-3.5 w-3.5" /> {member.email}
                     </a>
