@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logoIcon from "@/assets/logo-icon.png";
+import logoIcon from "@/assets/logo-icon-cropped.png";
 
 const navItems = [
   { label: "Startseite", path: "/" },
@@ -18,9 +18,9 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-card/95 backdrop-blur-sm">
-      <div className="container-narrow flex h-20 items-center justify-between px-4 md:h-24 md:px-8">
-        <Link to="/" className="flex items-center py-1">
-          <img src={logoIcon} alt="Home-tec Logo" className="h-[4.5rem] w-auto md:h-[5.5rem]" />
+      <div className="container-narrow flex h-16 items-center justify-between px-4 md:h-20 md:px-8">
+        <Link to="/" className="flex h-full items-center overflow-hidden">
+          <img src={logoIcon} alt="Home-tec Logo" className="h-[200%] w-auto max-w-[280px] object-contain object-left md:max-w-[360px]" />
         </Link>
 
         {/* Desktop nav */}
