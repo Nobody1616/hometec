@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Phone, MapPin } from "lucide-react";
-import Logo from "@/components/Logo";
+import logoIcon from "@/assets/logo-icon.png";
 
 const Footer = () => {
   return (
@@ -8,7 +8,12 @@ const Footer = () => {
       <div className="container-narrow px-4 py-12 md:px-8">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <Logo size="sm" showSubtitle linkTo="/" inverted />
+            <div className="flex items-center gap-2">
+              <img src={logoIcon} alt="Home-tec Logo" className="h-9 w-auto brightness-0 invert" />
+              <span className="font-heading text-lg font-bold text-background">
+                Home-tec <span className="text-primary">GbR</span>
+              </span>
+            </div>
             <p className="mt-3 text-sm text-background/70">
               Ihr zuverlässiger Partner für Wohnungsbau und Renovierung in Elsdorf und Umgebung.
             </p>
