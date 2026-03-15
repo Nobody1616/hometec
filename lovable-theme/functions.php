@@ -13,6 +13,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Enqueue styles and scripts
  */
 function lovable_theme_enqueue_assets() {
+    $ver = wp_get_theme()->get( 'Version' );
+
     // Google Fonts
     wp_enqueue_style(
         'lovable-google-fonts',
@@ -26,7 +28,43 @@ function lovable_theme_enqueue_assets() {
         'lovable-theme-style',
         get_stylesheet_uri(),
         array( 'lovable-google-fonts' ),
-        wp_get_theme()->get( 'Version' )
+        $ver
+    );
+
+    // Hero slider
+    wp_enqueue_script(
+        'lovable-hero-slider',
+        get_template_directory_uri() . '/js/hero-slider.js',
+        array(),
+        $ver,
+        true
+    );
+
+    // Scroll reveal animations
+    wp_enqueue_script(
+        'lovable-scroll-reveal',
+        get_template_directory_uri() . '/js/scroll-reveal.js',
+        array(),
+        $ver,
+        true
+    );
+
+    // Mobile navigation
+    wp_enqueue_script(
+        'lovable-mobile-nav',
+        get_template_directory_uri() . '/js/mobile-nav.js',
+        array(),
+        $ver,
+        true
+    );
+
+    // Smooth scroll
+    wp_enqueue_script(
+        'lovable-smooth-scroll',
+        get_template_directory_uri() . '/js/smooth-scroll.js',
+        array(),
+        $ver,
+        true
     );
 }
 add_action( 'wp_enqueue_scripts', 'lovable_theme_enqueue_assets' );

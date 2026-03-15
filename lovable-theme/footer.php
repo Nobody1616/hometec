@@ -2,7 +2,7 @@
     <div class="container-narrow">
         <div class="footer-grid">
             <div>
-                <strong style="font-size:1.125rem;"><?php bloginfo( 'name' ); ?></strong>
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>" style="height:40px;width:auto;filter:brightness(0) invert(1);">
                 <p style="margin-top:0.75rem;">
                     Ihr zuverlässiger Partner für Wohnungsbau und Renovierung in Elsdorf und Umgebung.
                 </p>

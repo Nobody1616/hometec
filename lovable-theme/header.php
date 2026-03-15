@@ -14,42 +14,33 @@
             <?php if ( has_custom_logo() ) : ?>
                 <?php the_custom_logo(); ?>
             <?php else : ?>
-                <strong style="font-family:'Plus Jakarta Sans',sans-serif;font-size:1.25rem;">
-                    <?php bloginfo( 'name' ); ?>
-                </strong>
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/logo.png' ); ?>" alt="<?php bloginfo( 'name' ); ?>">
             <?php endif; ?>
         </a>
 
         <nav class="main-nav">
-            <?php
-            wp_nav_menu( array(
-                'theme_location' => 'primary',
-                'container'      => false,
-                'items_wrap'     => '%3$s',
-                'fallback_cb'    => false,
-                'depth'          => 1,
-            ) );
-            ?>
-            <a href="tel:017643338686" class="btn btn-primary" style="margin-left:0.75rem;padding:0.5rem 1rem;font-size:0.875rem;">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="<?php echo is_front_page() ? 'active' : ''; ?>">Startseite</a>
+            <a href="<?php echo esc_url( home_url( '/leistungen' ) ); ?>">Leistungen</a>
+            <a href="<?php echo esc_url( home_url( '/projekte' ) ); ?>">Projekte</a>
+            <a href="<?php echo esc_url( home_url( '/ueber-uns' ) ); ?>">Über uns</a>
+            <a href="<?php echo esc_url( home_url( '/kontakt' ) ); ?>">Kontakt</a>
+            <a href="tel:017643338686" class="btn btn-primary" style="margin-left:0.75rem;padding:0.5rem 1rem;font-size:0.8125rem;">
                 📞 Jetzt anrufen
             </a>
         </nav>
 
-        <button class="mobile-toggle" onclick="document.querySelector('.mobile-nav').classList.toggle('open')" aria-label="Menü">
-            ☰
+        <button class="mobile-toggle" aria-label="Menü öffnen" aria-expanded="false">
+            <span class="icon-menu">☰</span>
+            <span class="icon-close" style="display:none;">✕</span>
         </button>
     </div>
 
     <nav class="mobile-nav">
-        <?php
-        wp_nav_menu( array(
-            'theme_location' => 'primary',
-            'container'      => false,
-            'items_wrap'     => '%3$s',
-            'fallback_cb'    => false,
-            'depth'          => 1,
-        ) );
-        ?>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Startseite</a>
+        <a href="<?php echo esc_url( home_url( '/leistungen' ) ); ?>">Leistungen</a>
+        <a href="<?php echo esc_url( home_url( '/projekte' ) ); ?>">Projekte</a>
+        <a href="<?php echo esc_url( home_url( '/ueber-uns' ) ); ?>">Über uns</a>
+        <a href="<?php echo esc_url( home_url( '/kontakt' ) ); ?>">Kontakt</a>
         <a href="tel:017643338686" class="btn btn-primary" style="display:block;text-align:center;margin-top:0.5rem;">
             📞 0176 43338686
         </a>
